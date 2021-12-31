@@ -40,16 +40,16 @@ function getUserInfo() {
 
 // 渲染用户图象
 function renderAvatar(user) {
-  var name = user.username || user.nickname
+  var name = user.nickname || user.username
   // $('#welcome').html('欢迎' + name)
   $('#welcome').html(`欢迎 ${name}`) // 渲染用户名字
   // 渲染用户图象
   if (user.user_pic !== null) {
     $('.text-avatar').hide()
-    $('.layui-nav-img').attr('url', user.user_pic)
+    $('.layui-nav-img').attr('src', user.user_pic).show()
   } else {
     $('.layui-nav-img').hide()
     var first = name.slice(0, 1).toUpperCase()
-    $('.text-avatar').html(first)
+    $('.text-avatar').html(first).show()
   }
 }
